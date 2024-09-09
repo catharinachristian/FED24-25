@@ -16,13 +16,13 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   <summary>uitwerken voor kick-off werkgroep</summary>
 
   ### Auteur:
-  Sanne 't Hooft (vervangen door jouw naam)
+  Catharina Christian
 
   #### Je startniveau:
-  hier je startniveau (kies uit zwart, rood óf blauw)
+  Blauw (rood)
 
   #### Je focus:
-  hier je focus (kies uit responsive óf surface plane)
+  responsive
  
 </details>
 
@@ -38,17 +38,14 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   ### Je opdracht:
   link naar de website die je gaat namaken óf de naam/omschrijving van je eigen ontwerp
   https://nl.diesel.com/en/
-  blauwe/ rode piste
-  focus op responsive, surface als extra
-  main page en detailpagina
 
   #### Screenshot(s) van de eerste pagina (small screen): 
-  hier de naam van de pagina  
-  <img src="readme-images/dummy-plaatje.jpg" width="375px" alt="omschrijving van de pagina">
+  main page / home page van diesel site
+  <img src="readme-images/main_screenshot.png" width="375px" alt="home page van de diesel site">
 
   #### Screenshot(s) van de tweede pagina (small screen):
-  hier de naam van de pagina  
-  <img src="readme-images/dummy-plaatje.jpg" width="375px" alt="omschrijving van de pagina">
+  detailpagina standaart zwarte dieselbelt
+  <img src="readme-images/detailpagina_screenshot.png" width="375px" alt="detailpagina dieselbelt">
  
 </details>
 

@@ -153,10 +153,37 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   ### Verslag van meeting
   hier na afloop snel de uitkomsten van de meeting vastleggen
 
-  - punt 1
-  - punt 2
-  - nog een punt
-- ...
+
+Vragen feedback donderdag
+ 
+oe maak ik een mega menu van de dropdown die ik nu heb op een hover
+Div maken die op display hidden
+En dan stijlen met twee sections en een grid
+Hover met + div
+
+
+Article h1 gaat niet met z index onder uitklappende menu
+
+Z-index zoeken
+Background image veranderen naar picture tag
+En dan media query in de html
+
+Highlight h2 boven de article
+Buiten de section
+Dan div om de articles en die div op display flex zetten
+
+Info deel van 4x grid naar 1 zonder tussenstappen
++ plaatjes?
+Eerst 4 dan naar 2 en dan vanaf punt 54em images op aan zetten
+
+Footer vormgeven?
+Ook media query
+
+Die twee verschillende footers maken en dan gewoon volledig uitklappen zonder javascript 
+
+
+Mega menu div in list van nav zitten
+
 
 </details>
 
@@ -186,6 +213,35 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   ### Stand van zaken
   hier dit ging goed & dit was lastig (neem ook screenshots op van delen van je website en code)
 
+Vragen feedback vrijdag
+
+Button in info article stilt niet mee met de rest
+Mega menu luistert niet
+
+Select nth of child met 500px 2fr terug zetten op artciles met model
+
+Hoe verander ik de grid in footer, lijkt mij grid 1, dan grid 2, dan weer grid 1? En dan naar 1?
+
+Query selector 
+Div flex reverse row
+
+
+Buttons lijken niet te corresponderen met de stijl die is toegepast
+
+
+Hoe zet ik een lijn daar, probeerde border-bottom maar dan pakt hij niet volledige breedte width 100%?
+
+
+
+Tweede pagina
+
+Waarom werkt die lijn niet
+Vakje laden
+??
+
+Infinite scroll carousel
+
+Radiobuttons kleur maken??
 
   ### Agenda voor meeting
   samen met je groepje opstellen

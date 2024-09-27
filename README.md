@@ -59,6 +59,12 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   ### Bevindingen
   Lijst met je bevindingen die in de test naar voren kwamen:
 
+  -header moet je doorheen skippen, hij geeft wel aan wat je kan verwachten in de navigatie
+  -eigenlijk alle knoppen zijn links, dat geeft hij wel duidelijk aan
+  -in carousel van highlights kom je pas na 4 of 5x uit dat deel van de main
+  -geen beschrijvingen plaatjes, wat misschien wel handig zou zijn bij een webshop
+
+
 </details>
 
 
@@ -95,6 +101,11 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   ### Agenda voor meeting
   samen met je groepje opstellen
 
+  fonts inladen, WOFF?
+  kan ik zomaar h3 gebruiken aan het begin
+  carousel met pijltjes maken?
+
+
   | student 1      | student 2          | student 3    | student 4        |
   | ---            | ---                | ---          | ---              |
   | dit bespreken  | en dit             | en ik dit    | en dan ik dat    |
@@ -103,12 +114,16 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
 
 
   ### Verslag van meeting
-  hier na afloop snel de uitkomsten van de meeting vastleggen
+  hier na afloop snel de uitkomsten van de meeting vastleggen, dingen die ik mee ga nemen;
 
-  - punt 1
-  - punt 2
-  - nog een punt
-  - ...
+  -hoe laad ik een font goed in: @ fontface
+  -in een webshop verschillende items articles maken
+  -de <detail> gebruiken
+  -headings nummeren kunnen door elkaar lopen
+  -CSS nog veel stappen maken
+  -(achtergrond)kleuren en lettertypes in custom properties zetten
+  -boxsizing aanzetten
+  -gebruik maken van overflow in begin van carousel
 
 </details>
 

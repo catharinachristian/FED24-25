@@ -53,7 +53,7 @@
 /* CUSTOM PROPERTIES */
 /*********************/
 :root {
-	--main-color: #e4002b;
+  --main-color: #e4002b;
   --color-text: #111;
   --color-background: #ffff;
   --font-primary: 'Neusa', sans-serif;
@@ -68,22 +68,20 @@
   padding: 0;
 }
 
-
-/* navigatiebalk  */
-
-header .logo  {
+header .logo {
   display: flex;
   position: absolute;
-  width: 20vw;
+  width: 19vw;
   transition: 300ms;
-  z-index: 2;
-
+  z-index: 200;
 
 }
 
+/* navigatiebalk  */
 nav {
   display: flex;
   right: 0;
+  z-index: 100;
   flex-direction: row;
   position: fixed;
   background-color: var(--color-background);
@@ -91,40 +89,40 @@ nav {
 }
 
 nav button {
-  display:flex;
-  align-items:center;
-  gap:.5em;
+  display: flex;
+  align-items: center;
+  gap: .5em;
   padding: 0;
-  background-color: white;
+  background-color: var(--color-background);
   border:none;
-  position:relative;
-  z-index:100;
+  position: relative;
+  z-index: 100;
 }
 
 nav button img {
   border: 1px solid var(--main-color);
-  height:3em;
+  height: 3em;
 }
 
 /* menu dat openklapt in mobiele versie */
-nav ul { 
-  display:flex;
-  margin:0; 
-  padding:5em 1em 1em 1em;
-  text-decoration:none;
+nav ul {
+  display: flex;
+  margin: 0;
+  padding: 5em 1em 1em 1em;
+  text-decoration: none;
   flex-wrap: wrap;
-  align-content:start;
+  align-content: start;
   gap: 0.5em;
-  background:var(--color-background);
-  position:fixed;
-  left:0;
-  right:0;
-  top:0;
-  bottom:0;
+  background: var(--color-background);
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
   justify-content: flex-end;
- translate: 0% 100%;
-transition:translate 0.5s;
-list-style: none;
+  translate: 0% 100%;
+  transition: translate 0.5s;
+  list-style: none;
 }
 
 nav ul a:hover {
@@ -132,9 +130,10 @@ nav ul a:hover {
 
 }
 
-/* als menu open is */
+/* als menu op mobiele versie open is */
+
 .toonMenu ul {
-  translate:0% ;
+  translate: 0%;
   text-transform: uppercase;
   font-weight: 500;
   font-size: x-large;
@@ -143,38 +142,39 @@ nav ul a:hover {
 }
 
 .toonMenu a {
-font-size: larger;
-background-color: white;
-display: block;
-padding: .5em;
-text-align: left;
-border: none;
-color: var(--color-text);
-font-family: var(--font-primary)
+  font-size: larger;
+  background-color: white;
+  display: block;
+  padding: .5em;
+  text-align: left;
+  border: none;
+  color: var(--color-text);
+  font-family: var(--font-primary)
 }
 
 .toonMenu a.active {
-background-color: white;
-border: none;
-margin: 0;
-color: var(--main-color);
-font-family: var(--font-primary)
+  background-color: white;
+  border: none;
+  margin: 0;
+  color: var(--main-color);
+  font-family: var(--font-primary)
 }
 
 .toonmenu div.containernav {
   display: block;
 }
 
+/* dit over grote menu bar */
+
 nav li {
   flex-basis: 20em;
-  flex-grow:1;
+  flex-grow: 1;
 }
 
-
 nav a {
-  display:flex;
-  justify-content:center;
-  align-items:center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: .5em;
   margin-top: .2em;
   text-decoration: none;
@@ -184,12 +184,11 @@ nav a {
   font-family: sans-serif;
   font-size: smaller;
 
-
 }
 
 nav a img {
-  width:auto;
-  height:2.2em;
+  width: auto;
+  height: 2.2em;
   padding: 0;
   margin: 0;
 }
@@ -207,55 +206,151 @@ nav a img {
 
 }
 
+/* dit is die eerste knop in menu bar */
 nav a.active {
   margin: .2em;
-  font-weight:bold;
-background-color: var(--main-color); 
-color: white;
-
-/* text-transform: uppercase;
-  font-size: 2em; ?????? */
-
+  font-weight: bold;
+  background-color: var(--main-color);
+  color: white;
 }
 
 @media (min-width:54em) {
 
-
   nav {
-    order:0;  
+    order: 0;
   }
-  
   nav button {
-    display:none;
+    display: none;
   }
-  
+
   nav ul {
-    position:static;
-    translate:unset;
-    padding:0;
-    background:none;
+    position: static;
+    translate: unset;
+    padding: 0;
+    background: none;
   }
-  
+
   nav li {
-    flex-basis:unset;
-    flex-grow:unset;
+    flex-basis: unset;
+    flex-grow: unset;
   }
-  
+
   nav a {
-    flex-direction:column;
-    border:none;
+    flex-direction: column;
+    border: none;
   }
-  
-  header > a:last-of-type {
-    flex-direction:column;
+
+  header>a:last-of-type {
+    flex-direction: column;
   }
+
 }
-  
+/* mega menu */
+/* https://www.w3schools.com/howto/howto_css_mega_menu.asp */
+ul:hover div.meganav {
+  display: grid;
+  grid-template-columns: 6fr 2fr;
+  gap: 2em;
+  max-height: 60vh;
+}
+
+.meganav {
+  grid-template-columns: 4fr 2fr;
+  z-index: 200;
+  font-family: sans-serif;
+  display: none;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2em;
+  max-height: 70vh;
+}
+
+.first-section {
+  font-size: small;
+  margin-left: 2em;
+  gap: 2em;
+  margin-top: 8em;
+  margin-bottom: 2em;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-right: 1px solid lightgrey;
+}
+
+.first-section h3 {
+  font-size: large;
+  text-transform: uppercase;
+  font-family: var(--font-primary);
+  font-weight: 500;
+  padding-bottom: 1em;
+}
+
+.first-section p {
+  padding-top: .5em;
+}
+
+.second-section {
+  display: grid;
+  margin-right: 1em;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  gap: 1em;
+}
+
+
+.second-section h3 {
+  grid-column: span 2;
+  margin-top: 5em;
+  text-align: center;
+  font-weight: 500;
+  font-family: var(--font-primary);
+}
+
+.second-section article h4 {
+  border: 1px solid var(--main-color);
+  font-size: x-small;
+  color: var(--main-color);
+  padding: .5em;
+
+}
+
+.second-section img {
+  border: 1px solid var(--main-color);
+
+  width: 100%;
+  height: auto;
+}
+
+/* dit gaat over die chat button die op het scherm hoverd */
+.floating-image {
+  position: fixed;
+  bottom: 1em;
+  right: 1em;
+  width: 10em;
+  height: auto;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+  z-index: 100;
+  opacity: .8;
+}
+
+.floating-image:hover {
+  opacity: 1;
+}
 
 /* begin body */
 
+body {
+  font-family: var(--font-primary);
+  border: 1px solid red;
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-background);
+  color: var(--color-text);
+  font-weight: 400;
+  z-index: 0;
+}
+
+/* https://www.w3schools.com/css/css_background_image.asp */
 .main {
-  
+  z-index: 50;
   background-image: url('/images/thumbnail.jpg');
   background-size: cover;
   width: 100%;
@@ -263,22 +358,24 @@ color: white;
 }
 
 
-  @media (min-width: 742px) {
-    .main {
-      background-image: url('/images/thumbnaildesktopsize.jpg');
-      background-size: cover;
-      background-position: center;
-      
-    }
+@media (min-width: 742px) {
+  .main {
+    background-image: url('/images/thumbnaildesktopsize.jpg');
+    background-size: cover;
+    background-position: center;
+
   }
+}
 
 .main article {
-  position:absolute;
-  left:50%;
-  top:50%;
-  translate:-50% -50%;
+  position: absolute;
+  z-index: 1;
+
+  left: 50%;
+  top: 50%;
+  translate: -50% -50%;
   padding: 1em 5em 1em 1em;
-  background-color:var(--color-background);
+  background-color: var(--color-background);
   border: 1px solid var(--main-color);
 
 }
@@ -293,10 +390,11 @@ h1 {
   font-size: medium;
   padding-bottom: 1em;
   text-align: start;
-  border-bottom: 2px solid blue;
 }
 
-button{
+/* dit gaat basically over alle buttons */
+
+button {
   font-family: sans-serif;
   color: var(--color-background);
   background-color: transparent;
@@ -306,7 +404,7 @@ button{
   position: relative;
 }
 
-button::before{
+button::before {
   content: '';
   position: absolute;
   width: 100%;
@@ -316,13 +414,13 @@ button::before{
   background-color: var(--main-color);
   z-index: -1;
   transition: .5s;
-  animation-duration:.5s;
+  animation-duration: .5s;
 }
 
 /* https://www.cssportal.com/css-clip-path-generator/ */
 
 
-/* Quinten -- oud student assisten -- heef tgeholpen en is het niet eens met jou keuzes, een div in een UL mag nooit sukkel! */
+/* op advies van Quinten met clip path, was eerst width0-width100 -- oud student assistent */
 @keyframes buttonAnimation {
   0% {
     clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
@@ -332,45 +430,31 @@ button::before{
     clip-path: polygon(100% 1%, 100% 0%, 100% 100%, 100% 100%);
   }
 }
-button:hover{
+
+button:hover {
   color: var(--main-color);
   animation-delay: .3s;
 }
-button:hover:before{
+
+button:hover:before {
   animation-name: buttonAnimation;
   animation-fill-mode: forwards;
 
-  animation-duration:.5s;
+  animation-duration: .5s;
 
 }
 
+/* twee sections met die plaatjes van modellen */
 
-
-/* body */
-body {
-  font-family: var(--font-primary);
-
-  border: 1px solid red;
-  margin: 0;
-  padding: 0;
-  background-color: var(--color-background);
-  color: var(--color-text);
-  font-weight: 400;
-  z-index: 0;
-}
-
-/* twee sections met artikelen */
-
-
- section:nth-of-type(2), section:nth-of-type(4) {
+section.products {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(500px, 1fr)); 
-  gap: 1em; 
-  padding: 2em; 
+  grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+  gap: 1em;
+  padding: 2em;
 }
 
 .products article {
-  position: relative; 
+  position: relative;
   z-index: -1;
 }
 
@@ -378,30 +462,26 @@ body {
   font-weight: 500;
   font-size: x-large;
   display: inline-block;
-  border: 1px solid var(--main-color); 
+  border: 1px solid var(--main-color);
   padding: 0.5em;
   color: var(--main-color);
 }
 
 .products img {
-  border: 1px solid var(--main-color); 
-  width: 100%; 
-} 
-
-
+  border: 1px solid var(--main-color);
+  width: 100%;
+}
 
 /* tussenstuk vrouw met tas */
 
-
-
 .tas {
-  background-image: url('/images/person.jpg'); 
+  background-image: url('/images/person.jpg');
   background-size: cover;
   background-position: center;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh; 
+  height: 100vh;
 }
 
 .blokje {
@@ -424,18 +504,17 @@ body {
 
 }
 
-.blokje button {
-  background-color: var(--color-background);
-  border-left: 3px solid var(--main-color); 
-  padding: 1.5em 2em;
+.blokje img {
+  background-color: var(--main-color);
+  border-left: 3px solid var(--main-color);
+  width: 3em;
 
 }
 
-/* carousel deel */
-
- 
+/* carousel deel van highlights, niet gelukt om het clickbaar te mkaken met javascript */
 .highlights {
   background-color: var(--main-color);
+  margin-bottom: 5em;
 }
 
 .highlights h2 {
@@ -443,22 +522,21 @@ body {
   justify-content: center;
   padding-top: 1em;
   color: var(--color-background);
-font-size: xx-large;
-font-weight: 500;
+  font-size: 3vw;
+  font-weight: 500;
 }
 
-
-.carouseldiv{
+.carouseldiv {
   display: flex;
   padding: 3em;
   display: flex;
-  overflow-x: scroll; 
+  overflow-x: scroll;
   gap: 2em;
 }
 
 .highlights article {
   display: flex;
-  flex-direction: column; 
+  flex-direction: column;
   align-items: flex-start;
 
 }
@@ -466,41 +544,41 @@ font-weight: 500;
 .highlights article h3 {
   text-decoration: underline;
   color: var(--main-color);
-  background-color: var(--color-background); 
+  background-color: var(--color-background);
   padding: .5em;
+  font-size: x-large;
   font-weight: 500;
   border: 1px solid var(--main-color);
   text-decoration: underline;
 }
 
 .highlights img {
-  height: 20em;
+  height: 30em;
   width: auto;
 }
 
 
-/* laatste section  */
-
+/* laatste section */
 .info {
-
   font-family: sans-serif;
   font-size: x-small;
-  margin-top: 2em;
   background-color: var(--main-color);
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
-
 .info article {
-  background-color: white;
+  background-color: var(--color-background);
   margin: 1em;
   padding: 2em;
   color: var(--main-color);
   font-weight: 400;
+  font-size: x-small;
   flex-direction: column;
+  justify-content: space-between;
   display: flex;
   min-width: 25%;
+  z-index: 1;
 }
 
 h4 {
@@ -509,25 +587,26 @@ h4 {
 }
 
 .info img {
-  
   max-width: 25em;
   height: auto;
 }
 
 
+/* geeft aan dat die plaatjes weg gaan en die grid veranderd op mobiel */
 @media (max-width: 54em) {
-
   .info {
     grid-template-columns: 1fr;
   }
 
-  .info img {
+  .info div img {
     display: none;
   }
 
-} 
+}
 
-/* Formulier styling */
+/* formulier styling */
+/* https://www.w3schools.com/css/css_form.asp */
+
 form {
   display: flex;
   flex-direction: column;
@@ -535,6 +614,7 @@ form {
 }
 
 form label {
+  padding-top: .5em;
   font-size: small;
 }
 
@@ -550,8 +630,8 @@ fieldset {
   display: flex;
   border: none;
   flex-direction: row;
-  justify-content: space-between; /* Of 'flex-start' om de knoppen dichterbij elkaar te plaatsen */
-  gap: 1em; /* Optioneel: ruimte tussen de radio buttons */
+  justify-content: space-between;
+  gap: 1em;
 }
 
 label {
@@ -564,8 +644,7 @@ input[type="radio"] {
   margin-right: 0.5em;
 }
 
-
-/* gaat over die knop op het plaatje  */
+/* knop op plaatje positioneren */
 .image-container {
   display: inline-block;
 }
@@ -576,8 +655,8 @@ input[type="radio"] {
 }
 
 .image-container button {
-background-color: var(--color-background); 
- width: 100%;
+  background-color: var(--color-background);
+  width: 100%;
   bottom: 10px;
   left: 50%;
   transform: translateX(-50%);
@@ -590,33 +669,32 @@ background-color: var(--color-background);
   color: var(--main-color);
   border: 1px solid var(--main-color);
 }
+
 /* footer */
-
-
 .footer-menu {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;  
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   list-style: none;
   padding: 0;
 }
 
 @media (max-width: 54em) {
-
   .footer-menu {
     grid-template-columns: 1fr;
   }
 
-  }
+}
 
+/* uitklapende stukjes met summary en details */
 .details ul {
   list-style: none
 }
 
 .details ul a {
   margin-bottom: 1em;
-  display: block; 
+  display: block;
   font-size: small;
-  padding: .8em 2em .2em; 
+  padding: .8em 2em .2em;
   text-decoration: none;
   color: var(--main-color);
   font-family: sans-serif;
@@ -625,24 +703,24 @@ background-color: var(--color-background);
 }
 
 summary {
-border: .2px solid var(--main-color);
+  border: .2px solid var(--main-color);
   list-style: none;
-width: 100%; 
-padding: 1.5em;
-color: var(--main-color);
-text-transform: uppercase;
-font-family: sans-serif;
-font-weight: 500;
+  width: 100%;
+  padding: 1.5em;
+  color: var(--main-color);
+  text-transform: uppercase;
+  font-family: sans-serif;
+  font-weight: 500;
 
 }
 
 .dropdown-trigger {
-width: 100%; 
-padding: 1.5em;
-color: var(--main-color);
-text-transform: uppercase;
-font-family: sans-serif;
-font-weight: 500;
+  width: 100%;
+  padding: 1.5em;
+  color: var(--main-color);
+  text-transform: uppercase;
+  font-family: sans-serif;
+  font-weight: 500;
 }
 
 
@@ -653,93 +731,14 @@ svg {
   margin: 1.6em;
 }
 
-.icons, .icons:nth-of-type(3) {
+.icons,
+.icons:nth-of-type(3) {
   display: block;
   text-align: center;
   border: 1px solid var(--main-color);
 }
 
-
-.gay article:nth-of-type(2) {
-  display: grid;
-  padding: 2em;
-  margin: 0;
-  border: 1px solid var(--main-color);
-  gap: 2em;
-  text-align: center;}
-
-
-
-  /* mega menu */
-
-  ul:hover div.meganav {
-    display: grid;
-    grid-template-columns: 6fr 2fr; 
-    gap: 2em;
-    max-height: 60vh; 
-  }
-  
-  .meganav {
-    grid-template-columns: 4fr 2fr; 
-
-    font-family: sans-serif;
-    display: none; 
-    grid-template-columns: repeat(2, 1fr); 
-    gap: 2em;
-    max-height: 60vh; 
-  }
-  
-  .first-section {
-    font-size: small;
-    margin-left: 2em;
-    gap: 2em;
-    margin-top: 10em;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-  }
-  
-  .first-section h3, 
-  .second-section article h4 {
-    font-weight: 600;    
-  }
-  
-  .second-section h3 {
-    grid-column: span 2;
-    margin-top: 5em;
-    text-align: center;
-  }
-  
-  .second-section {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); 
-    grid-template-rows: repeat(4, 1fr);  
-    gap: 1em;
-  }
-  
-  .second-section img {
-    width: 5em;
-    height: auto;
-  }
-
-  /* dit gaat over die chat button die op het scherm hoverd */
-
-  .floating-image {
-    position: fixed;
-    bottom: 1em; 
-    right: 1em; 
-    width: 10em; 
-    height: auto;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5); 
-    z-index: 100;
-    opacity: .8; 
-  }
-  
-  .floating-image:hover {
-    opacity: 1; 
-  }
-  
 /* nog laatste deel footer */
-
 .taal {
   display: flex;
   justify-content: center;
@@ -747,51 +746,73 @@ svg {
   border: 1px solid var(--main-color);
 
 }
+
 .taal p {
   flex-direction: column;
- padding: 2em 10em 2em;
-    border-left:1px solid #e4002b;}
+  padding: 2em 10em 2em;
+  font-family: sans-serif;
+  color: var(--main-color);
+  font-size: small;
+  border-left: 1px solid #e4002b;
+}
 
 .copyright {
   padding: 2em;
+  font-family: sans-serif;
+  color: var(--main-color);
+  font-size: small;
 }
 
-  /* vanaf hier detail pagina*/
+/* begin tweede pagina */
+/* carousel */
 
 .beltcarousel {
   display: flex;
   justify-content: center;
-  overflow-x: scroll;
+  overflow-x: auto;
+  position: relative;
 }
+
 .carousel {
   display: flex;
 }
 
 .beltcarousel img {
-  height: 60vw;
+  height: 50vw;
+  object-fit: cover;
   width: auto;
-  object-fit: cover; 
 }
 
 @media (max-width: 742px) {
   .beltcarousel img {
-    height: 100vw;
+    width: 100vw;
   }
 }
 
-.name {
-  display: grid;
-  grid-template-rows: repeat(1,1fr);
-  padding: 1em;
+.beltcarousel, 
+.sticky {
+  margin-bottom: -10em; 
 }
 
-.name h1{
-  padding-bottom: .3em;
-  border: none;
+/* dat sticky element */
+.sticky {
+  max-width: 30vw;
+  position: sticky;
+  top: 5em;
+  background-color: white;
+  grid-column: 2 / 1;
+  padding: 1em;
+  border: 1px solid var(--main-color);
+  z-index: 10;
+  margin-left: 1em;
+  margin-top: 10em;
+}
+
+h1.name {
+  padding-bottom: 0.3em;
   font-size: x-large;
   font-weight: 500;
   color: var(--color-text);
-  font-family: var(--font-primary);
 }
 
 .name h2 {
@@ -800,118 +821,235 @@ svg {
   padding-bottom: 1em;
 }
 
-.name p  {
-  padding-bottom: .3em;
-  border-bottom: 1px solid var(--main-color);
-
-}
-
-/* kleur kiezen belt */
 .color-options {
+
   display: flex;
-  flex-direction: row; 
+  flex-direction: row;
   padding: 1em;
-  gap: 0;
-}
-
-.color-options label {
-  font-size: large;
-  display: flex;
-  align-items: center;
-  margin-right: 1em; 
-  border-bottom: 1px solid var(--main-color);
-
-}
-
-.color-options input[type="radio"] {
-  margin-right: .3em;
-  
 }
 
 .kleur {
-  padding-left: 1em;
-  font-weight: 400;
-  color: var(--color-text);
+  border-top: 2px solid var(--main-color);
+
   font-size: large;
+  font-weight: 400;
 }
 
-/* dit over de maten riem */
-
-
+/* size knoppen styling */
 .maat ul {
-  margin-left: 1em;
   display: flex;
+  flex-wrap: wrap;
   list-style: none;
-  gap: 1em;
-
+  gap: .5em;
 }
-.maat li {
-  flex-direction: column;
-  border: 1px solid var(--main-color);
-  padding: 1em
 
+@media (max-width: 742px) {
+  .maat ul {
+    display: flex;
+    flex-wrap: nowrap;
+  }
+}
+
+.maat li {
+  border: 1px solid var(--main-color);
+  padding: .5em 1em;
 }
 
 .maat li:hover {
-  color: red;
+  border: 3px solid red;
 }
 
 .smol {
   padding-top: 1em;
-
-}
-
-.smol p{
-  padding-left: 1em;
-  color: red;
-}
-
-/* vanaf hier dat rode blok */
-
-.johansbroer{
-  background-color: var(--main-color);
-  width: 100%;
-  display: block;
-  padding: 4em 4em 4em;
-
-}
-
-.johansbroer details summary {
-  background-color: white;
   color: var(--main-color);
-  border-bottom: 1px solid var(--main-color);
+}
+
+.smol p:nth-of-type(3) {
+  color: grey;
+}
+
+@media (min-width: 742px) {
+  .smol p {
+    display: flex;
+  }
 
 }
 
-.minijohan {
+button.buy {
+align-items: center;  
+justify-content: center;
+padding-left: 6em;
+padding-right: 6em;
+margin-top: 1em;
+}
+
+/* roodblok section styling */
+.roodblok {
+margin-top: 10em;
+  background-color: var(--main-color);
+  padding: 4em;
+}
+
+.blokrood {
   display: flex;
+  flex-direction: column;
+align-items: flex-end;}
+
+
+.witblok img {
+  width: 5em;
+  height: auto;
+}
+.witblok {
+  background-color: white;
+  padding: 2em;
+  font-family: sans-serif;
 }
 
-.minijohan li {
-  flex-direction: row;
-margin-right: 1.5em;
-color: white;
+.witblok h4 {
+  padding-top: 1em;
+padding-left: 1em; 
+font-weight: 600;
+font-size: medium;
+
 }
 
-/* dit gaat over articles van die riemen */
+.witblok p, .witblok ul li  {
+  list-style: none;
+  padding-top: 1em;
+  padding-left: 1em; 
+  font-size: small;
 
-.like h2{
+}
+
+
+.blokrood details summary {
+  font-weight: 600;
+  font-size: medium;
+  margin-right: 15em;
+  background-color:whitesmoke;
+  border: none;
+  color: var(--color-text);
+  box-shadow: 2px 2px 10px rgba(180, 180, 180, 0.5);
+}
+
+.kleinelist {
+  display: flex;
+  margin-bottom: 1em;
+}
+
+.kleinelist li {
+  color: white;
+  margin-right: 1.5em;
+}
+
+
+
+@media (min-width: 742px) {
+  
+  .detailgrid {
+    border: 1px solid var(--main-color);
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2em;
+    justify-items: start;
+  }
+
+}
+
+@media (max-width: 54em) {
+  .schuifduif {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .beltcarousel {
+    order: 1; 
+  }
+
+  .beltcarousel img {
+ height: 50em;
+    }  
+
+  .sticky {
+    border: 2px solid var(--main-color);
+    margin: 0;
+    order: 2; 
+    max-width: 100vw;
+      display: block;
+      position: static;
+  
+    
+  }
+
+  .roodblok {
+    order: 3; 
+      margin-top: 0em;
+      padding: 2em;
+
+  }
+
+  .like {
+    order: 4; 
+  }
+
+  .info {
+    order: 5;
+  }
+
+  .details {
+    order: 6; 
+  }
+
+  footer {
+    order: 7; 
+  }
+
+  button.buy {
+    display: none;
+  }
+  
+  .detailgrid {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--main-color);
+  }
+
+
+
+}
+
+.like {
+  margin: 1em;
+}
+
+.like h2 {
+  margin-top: 1em;
   border: 1px solid var(--main-color);
-font-size: xx-large;
-color: var(--main-color);
+  font-size: xx-large;
+  font-weight: 500;
+  color: var(--main-color);
 }
 
-.sam {
-  display: flex;
-  overflow: scroll;
-
-}
-
-.sam li {
+.like li {
+  list-style: none;
   flex-direction: column;
   border: 1px solid var(--main-color);
+  padding: 1em;
 }
 
-.sam li img {
-  height: 25em;
+.like p {
+  font-family: sans-serif;
+  font-size: small;
+  font-weight: 300;
+
+}
+
+.like ul {
+  display: flex;
+  overflow: scroll;
+}
+
+.like li img {
+  height: 30em;
 }
